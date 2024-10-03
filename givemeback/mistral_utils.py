@@ -5,9 +5,9 @@ from givemeback import c, credentials
 
 MISTRAL_KEY = credentials['MISTRAL_KEY']
 
-def ask_mistral(prompt="Hey, what are you ?"):
+def ask_mistral(prompt: str, api_key: str=MISTRAL_KEY) -> str:
     model = "mistral-large-latest"
-    client = Mistral(api_key=MISTRAL_KEY)
+    client = Mistral(api_key=api_key)
 
     chat_response = client.chat.complete(
         model = model,
@@ -19,5 +19,5 @@ def ask_mistral(prompt="Hey, what are you ?"):
         ]
     )
 
-    print(chat_response.choices[0].message.content)
-    return chat_response
+     #print(chat_response.choices[0].message.content)
+    return chat_response.choices[0].message.content

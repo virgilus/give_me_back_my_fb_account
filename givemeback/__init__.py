@@ -12,6 +12,6 @@ SECRETS_PATH = join(dirname(dirname(__file__)), 'secrets/credentials.yaml')
 with open(SECRETS_PATH, 'rb') as file:
     credentials = safe_load(file) # credentials is now a global dict config
 
-PROMPTS_PATH = join(dirname(dirname(__file__)), 'prompts/prompts.yaml')
+PROMPTS_PATH = join(dirname(dirname(__file__)), 'prompts/atp_prompts.yaml')
 with open(PROMPTS_PATH, 'rb') as file:
     p = safe_load(file) # credentials is now a global dict config
