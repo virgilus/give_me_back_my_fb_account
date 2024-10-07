@@ -1,13 +1,19 @@
-from givemeback import c, p
+from givemeback import c, p, logging
 import givemeback.tweeter_utils as tu
 import givemeback.mistral_utils as mu
 
+from random import randint, choice
 from time import sleep
+
+TIME_TO_SLEEP = c['TIME_TO_SLEEP']
+RANDOM_TIME = c['RANDOM_TIME']
+DRY_RUN_TWITTER = c['DRY_RUN_TWITTER']
+
 
 if __name__ == "__main__":
 
     while True:
-        text = mu.ask_mistral(p[1])
-        print("Mistral text --->>>", text)
-        tu.post(text)
-        sleep(12)
+        text = mu.ask_mistral(choice(p))
+        logging.critical(f"Mistral text generated --->>>  {text}")
+        tu.post(text, DRY_RUN_TWITTER)
+        sleep(TIME_TO_SLEEP + randint(0, RANDOM_TIME))

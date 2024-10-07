@@ -9,7 +9,7 @@ ACCESS_TOKEN = credentials['ACCESS_TOKEN']
 ACCESS_TOKEN_SECRET = credentials['ACCESS_TOKEN_SECRET']
 BEARER_TOKEN = credentials['BEARER_TOKEN']
 
-def post(text: str) -> None:
+def post(text: str, dry_run: bool=False) -> None:
 
     client = tweepy.Client(consumer_key=API_KEY,
                            consumer_secret=API_KEY_SECRET,
