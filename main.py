@@ -14,6 +14,6 @@ if __name__ == "__main__":
 
     while True:
         text = mu.ask_mistral(choice(p))
-        logging.critical(f"Mistral text generated --->>>  {text}")
+        logging.info(f"Mistral text generated --->>>  {text}")
         tu.post(text, DRY_RUN_TWITTER)
         sleep(TIME_TO_SLEEP + randint(0, RANDOM_TIME))

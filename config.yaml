@@ -1,4 +1,4 @@
-LOGGING_LEVEL: 50
+LOGGING_LEVEL: 20
 TIME_TO_SLEEP: 10 # Default : 1800 seconds, so 30mns
 RANDOM_TIME: 10 # Default 600 seconds, so max 10mns
 DRY_RUN_TWITTER: True

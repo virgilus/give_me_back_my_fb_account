@@ -24,6 +24,6 @@ def ask_mistral(prompt: str, api_key: str=MISTRAL_KEY) -> str:
 
     tweet_len = len(tweet)
     if tweet_len > TWITTER_CHARACTERS_LIMIT:
-        logging.critical(f'String too long ({tweet_len} characters where as limit is {TWITTER_CHARACTERS_LIMIT}). Generating a new one.')
+        logging.warning(f'String too long ({tweet_len} characters where as limit is {TWITTER_CHARACTERS_LIMIT}). Generating a new one.')
         ask_mistral(prompt, MISTRAL_KEY)
     return tweet
